@@ -1,0 +1,139 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    
+  <title>Stopwatch</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    
+    <div id="wrapper">
+        
+        <div id="start-screen" class="game-screen">
+            <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+            <div id="start-options" class="dropdown">
+                <div id="color-selection">Colors: Level 1</div>
+                <ul id="list-choices">
+                    
+                </ul>
+            </div>
+            </div>
+            <button onclick="startGame(event)">Start Game</button>
+            <div id="list-editor-btn" onclick="changeGameScreen('start', 'listEditor')">List Editor</div>
+            
+            
+        </div>
+        
+        
+        <div id="game-board" class="game-screen hide">
+            
+            <div id="info">
+                <div class="vertical">
+                    <div id="category" class="info-display">colors</div>
+                    <div class="label">category</div>
+                </div>
+                <div class="vertical">
+                    <div id="clock" class="info-display">00:00:00</div>
+                    <div class="label">time</div>
+                </div>
+                <div class="vertical">
+                    <div id="score" class="info-display">0</div>
+                    <div class="label">score</div>
+                </div>
+            </div>
+            
+            <div id="word">
+                <div class="letter-space"><p class="letter">h</p></div>
+                <div class="letter-space"><p class="letter">a</p></div>
+                <div class="letter-space"><p class="letter">n</p></div>
+                <div class="letter-space"><p class="letter">g</p></div>
+                <div class="letter-space"><p class="letter">m</p></div>
+                <div class="letter-space"><p class="letter">a</p></div>
+                <div class="letter-space"><p class="letter">n</p></div>
+            </div>
+            
+            <div id="alphabet">
+                <div class="alpha-letter used">a</div>
+                <div class="alpha-letter used">b</div>
+                <div class="alpha-letter used">c</div>
+                <div class="alpha-letter used">d</div>
+                <div class="alpha-letter used">e</div>
+                <div class="alpha-letter used">f</div>
+                <div class="alpha-letter used">g</div>
+                <div class="alpha-letter used">h</div>
+                <div class="alpha-letter used">i</div>
+                <div class="alpha-letter used">j</div>
+                <div class="alpha-letter used">k</div>
+                <div class="alpha-letter used">l</div>
+                <div class="alpha-letter used">m</div>
+                <div class="alpha-letter used">n</div>
+                <div class="alpha-letter used">o</div>
+                <div class="alpha-letter used">p</div>
+                <div class="alpha-letter used">q</div>
+                <div class="alpha-letter used">r</div>
+                <div class="alpha-letter used">s</div>
+                <div class="alpha-letter used">t</div>
+                <div class="alpha-letter used">u</div>
+                <div class="alpha-letter used">v</div>
+                <div class="alpha-letter used">w</div>
+                <div class="alpha-letter used">x</div>
+                <div class="alpha-letter used">y</div>
+                <div class="alpha-letter used">z</div>
+            </div>
+            
+            <button onclick="pauseGame()">Pause</button>
+                        
+        </div>
+        
+        <div id="win-screen" class="game-screen hide">
+            <div id="win-score">1000</div>
+            <div id="win-word">yellow</div>
+            <div class="category">colors</div>
+            <button onclick="newWord()">New Word</button>
+        </div>
+        
+        <div id="finish-screen" class="game-screen hide">
+            <div id="finish-score">1000</div>
+            <div id="finish-category" class="category">colors</div>
+            <button onclick="newWord()">New Word</button>
+        </div>
+        
+        <div id="pause-screen" class="game-screen hide">
+            <div>Game Paused</div>
+            <button onclick="resumeGame()">Resume</button>
+            <button onclick="changeGameScreen('pause', 'start')">start</button>
+            <button onclick="newGame()">Options</button>
+        </div>
+        
+        <div id="edit-screen" class="game-screen hide">
+            <input type="text" id="new-cat" value="new category">
+            <ul id="new-word-list">
+                <li class="new-word">
+                    <input type="text" class="edit-word" value="new word">
+                    <div class="icon" onclick="acceptWord(event)">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </li>
+            </ul>
+            <button id="create-list" onclick="createList(event)">Create New List</button>
+            <button onclick="changeGameScreen('listEditor', 'start')">start</button>
+        </div>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+  <script src="js/main.js"></script>
+    
+</body>
+</html>
